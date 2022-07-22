@@ -21,16 +21,23 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.2",
+    "rxjs": "7.5.6"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "9.x.x",
+    "@nestjs/core": "9.x.x",
+    "@nestjs/platform-express": "9.x.x",
+    "@typegoose/typegoose": "9.x.x",
+    "mongoose": "6.4.2"
+  },
+  "devDependencies": {
     "@nestjs/common": "9.0.5",
     "@nestjs/core": "9.0.5",
     "@nestjs/platform-express": "9.0.5",
     "@typegoose/typegoose": "9.10.1",
     "mongoose": "6.4.2",
-    "reflect-metadata": "0.1.13",
-    "rimraf": "3.0.2",
-    "rxjs": "7.5.6"
-  },
-  "devDependencies": {
     "@nestjs/cli": "9.0.0",
     "@nestjs/schematics": "9.0.0",
     "@nestjs/testing": "9.0.0",
