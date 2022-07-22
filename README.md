@@ -1,0 +1,1 @@
+# nest-typegoose
