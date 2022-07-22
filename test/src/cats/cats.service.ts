@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { ReturnModelType } from '@typegoose/typegoose'
-import { InjectModel } from '../../lib'
+import { InjectModel } from '../../../lib'
 import { CatModel } from './cat.model'
 
 @Injectable()

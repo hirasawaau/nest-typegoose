@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common'
-import { TypegooseModule } from '../lib'
+import { TypegooseModule } from '../../lib'
 import { CatsModule } from './cats/cats.module'
 
 @Module({

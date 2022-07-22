@@ -1,7 +1,7 @@
 import { INestApplication } from '@nestjs/common'
 import { Server } from 'http'
 import { Test } from '@nestjs/testing'
-import { AppModule } from '../../src/app.module'
+import { AppModule } from '../src/app.module'
 import * as request from 'supertest'
 
 jest.setTimeout(10000)
