@@ -1,0 +1,50 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Module
+        run: npm i
+      - name: Lint
+        run: npm run lint
+  integration_test:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.7.0
+        with:
+          mongodb-version: ['5.0']
+          mongodb-db: test
+      - name: Install Module
+        run: npm i
+      - name: 'Integration'
+        run: npm run test:e2e
+
+  semantic:
+    runs-on: ubuntu-latest
+    needs:
+      - 'lint'
+      - 'test'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - run: npm i
+      - run: npm run build
+      - run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.CR_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

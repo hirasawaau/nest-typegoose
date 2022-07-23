@@ -1,7 +1,5 @@
-src
 test
 .eslintrc.js
 .prettierrc
 docker-compose.yml
-nest-cli.json
 lib

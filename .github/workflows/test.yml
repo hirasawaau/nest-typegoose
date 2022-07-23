@@ -15,7 +15,7 @@ jobs:
         run: npm i
       - name: Lint
         run: npm run lint
-  integration_tes:
+  integration_test:
     runs-on: ubuntu-20.04
 
     steps:
