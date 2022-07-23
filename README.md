@@ -17,4 +17,52 @@ import { TypegooseModule } from 'nest-typegoose'
 export class AppModule {}
 ```
 
+### Model Injection
 
+#### Model Example
+```typescript
+// cat.model.ts
+@modelOptions({
+  options: {
+    customName: 'cats',
+  },
+})
+export class CatModel {
+  @prop({ auto: true })
+  id: Types.ObjectId
+
+  @prop()
+  name: string
+}
+```
+
+#### Initialize Model to Module 
+```typescript
+// cat.module.ts
+import { Module } from '@nestjs/common'
+import { CatModel } from './cat.model'
+
+@Module({
+  imports: [TypegooseModule.forFeature([CatModel])],
+  provider: [...],
+  exports: [...],
+})
+export class CatModule {}
+```
+
+#### Inject Model to Service
+```typescript
+import { Injectable } from '@nestjs/common'
+import { CatModel } from './cat.model'
+import { InjectModel } from 'nest-typegoose'
+import { ReturnModelType } from '@typegoose/typegoose'
+
+@Injectable()
+export class CatService {
+  constructor(@InjectModel(CatModel) private readonly catModel: ReturnModelType<typeof CatModel>) {}
+
+  ...
+}
+```
+
+```
