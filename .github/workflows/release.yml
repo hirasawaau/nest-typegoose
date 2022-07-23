@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - 'lint'
-      - 'test'
+      - 'integration_test'
     steps:
       - uses: actions/checkout@v2
         with:
