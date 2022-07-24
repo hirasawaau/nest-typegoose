@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/hirasawaau/nest-typegoose/compare/v1.0.1...v1.0.2) (2022-07-24)
+
+
+### Bug Fixes
+
+* Export utils ([e961a41](https://github.com/hirasawaau/nest-typegoose/commit/e961a41f0eee5571cf7c880b28222b8ce5457efe))
+
 ## [1.0.1](https://github.com/hirasawaau/nest-typegoose/compare/v1.0.0...v1.0.1) (2022-07-24)
 
 
