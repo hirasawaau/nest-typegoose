@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/hirasawaau/nest-typegoose/compare/v1.0.2...v1.0.3) (2022-08-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependencies ([#1](https://github.com/hirasawaau/nest-typegoose/issues/1)) ([3999fe7](https://github.com/hirasawaau/nest-typegoose/commit/3999fe70249dfba08c2671252d62038572c90cd7))
+
 ## [1.0.2](https://github.com/hirasawaau/nest-typegoose/compare/v1.0.1...v1.0.2) (2022-07-24)
 
 
