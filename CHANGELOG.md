@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/hirasawaau/nest-typegoose/compare/v1.0.4...v1.1.0) (2023-05-01)
+
+
+### Features
+
+* Add option to skip error when connecting failed ([#14](https://github.com/hirasawaau/nest-typegoose/issues/14)) ([c41bdbb](https://github.com/hirasawaau/nest-typegoose/commit/c41bdbb75016c148f6965ea531b12c8537311934))
+
 ## [1.0.4](https://github.com/hirasawaau/nest-typegoose/compare/v1.0.3...v1.0.4) (2022-09-24)
 
 
