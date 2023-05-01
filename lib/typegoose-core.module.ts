@@ -9,8 +9,8 @@ import {
   Type,
 } from '@nestjs/common'
 import { ModuleRef } from '@nestjs/core'
-import mongoose, { Connection, MongooseOptions } from 'mongoose'
-import { defer, lastValueFrom } from 'rxjs'
+import mongoose, { Connection } from 'mongoose'
+import { catchError, defer, lastValueFrom, of } from 'rxjs'
 import {
   TypegooseModuleAsyncOptions,
   TypegooseModuleOptions,
@@ -37,6 +37,7 @@ export class TypegooseCoreModule implements OnApplicationShutdown {
       retryDelay,
       connectionName,
       connectionFactory,
+      skipConnectionError = false,
       ...mongooseOptions
     } = options
 
@@ -59,9 +60,22 @@ export class TypegooseCoreModule implements OnApplicationShutdown {
               await mongoose.createConnection(uri, mongooseOptions).asPromise(),
               typegooseConnectionName,
             ),
-          ).pipe(handleRetry(retryAttempts, retryDelay)),
+          )
+            .pipe(handleRetry(retryAttempts, retryDelay))
+            .pipe(
+              catchError((err) => {
+                if (skipConnectionError) {
+                  return of(null)
+                }
+                throw err
+              }),
+            ),
         ).then((connection: any) => {
-          this.logger.log(`options: ${JSON.stringify(mongooseOptions)}`)
+          if (connection) {
+            this.logger.log(`Successfully connected to the database`)
+          } else {
+            this.logger.error(`Failed to connected to the database`)
+          }
           return connection
         }),
     }

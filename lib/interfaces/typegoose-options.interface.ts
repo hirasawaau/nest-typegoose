@@ -9,6 +9,7 @@ export interface TypegooseModuleOptions
   retryDelay?: number
   connectionName?: string
   connectionFactory?: (connection: any, name: string) => any
+  skipConnectionError?: boolean
 }
 
 export interface TypegooseOptionsFactory {
