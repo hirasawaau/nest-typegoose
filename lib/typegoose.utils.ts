@@ -1,5 +1,12 @@
 import { Logger } from '@nestjs/common'
-import { delay, Observable, retryWhen, scan } from 'rxjs'
+import {
+  delay,
+  Observable,
+  ObservableInput,
+  retry,
+  retryWhen,
+  scan,
+} from 'rxjs'
 import { TypegooseConstant } from './typegoose.constant'
 
 export function getModelToken(model: string, connectionName?: string) {
