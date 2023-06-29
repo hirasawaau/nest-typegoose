@@ -1,6 +1,6 @@
 {
   "name": "nest-typegoose",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Nest.js wrapper for @typegoose/typegoose",
   "author": "Hirasawa Ishikawa",
   "private": false,

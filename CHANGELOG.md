@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/hirasawaau/nest-typegoose/compare/v1.1.0...v1.1.1) (2023-06-29)
+
+
+### Bug Fixes
+
+* **deps:** upgrade deps ([#16](https://github.com/hirasawaau/nest-typegoose/issues/16)) ([2223c5c](https://github.com/hirasawaau/nest-typegoose/commit/2223c5c88eb1c4782e8d489cb025c14137f10ed6))
+
 # [1.1.0](https://github.com/hirasawaau/nest-typegoose/compare/v1.0.4...v1.1.0) (2023-05-01)
 
 
