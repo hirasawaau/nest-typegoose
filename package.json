@@ -37,7 +37,7 @@
     "url": "https://github.com/hirasawaau/nest-typegoose/issues"
   },
   "devDependencies": {
-    "@nestjs/cli": "10.0.5",
+    "@nestjs/cli": "10.4.5",
     "@nestjs/common": "10.0.3",
     "@nestjs/core": "10.0.3",
     "@nestjs/platform-express": "10.0.3",
